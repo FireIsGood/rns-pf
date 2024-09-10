@@ -1,0 +1,56 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: minmax(0, 1fr); /* Evil grid bug */
+}
+
+body > header,
+body > main,
+body > footer {
+  max-width: 960px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  > * {
+    margin: 0;
+  }
+}
+
+code {
+  word-break: break-all;
+  word-break: break-word;
+}
+
+@media (min-width: 800px) {
+  :root {
+    scrollbar-gutter: stable both-edges;
+  }
+}
+
+/* Specific styles */
+a.no-underline:not(:hover) {
+  text-decoration: none;
+}
+
+.img-right {
+  float: right;
+}
+
+.img-right + p::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.clear {
+  clear: both;
+}
