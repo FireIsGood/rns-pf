@@ -49,8 +49,14 @@ pre code {
 /* Specific styles */
 .preview {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: minmax(0, 1fr); /* Evil grid bug */
   gap: 1rem;
+}
+
+@media (min-width: 800px) {
+  .preview {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
 }
 
 .preview pre {
