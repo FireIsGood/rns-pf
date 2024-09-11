@@ -126,6 +126,7 @@ a.no-underline:not(:hover) {
   left: 1em;
   width: 2.5em;
   height: 2.5em;
+  margin-top: 2px;
   border-radius: 50%;
 }
 
