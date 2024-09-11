@@ -1,5 +1,6 @@
 html {
   height: 100%;
+  font-size: 100%;
 }
 
 body {
@@ -25,9 +26,18 @@ header {
   }
 }
 
+pre,
+code {
+  border: 1px solid var(--pico-form-element-border-color);
+}
+
 code {
   word-break: break-all;
   word-break: break-word;
+}
+
+pre code {
+  border: 0;
 }
 
 @media (min-width: 800px) {
@@ -37,6 +47,20 @@ code {
 }
 
 /* Specific styles */
+.preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1rem;
+}
+
+.preview pre {
+  margin: 0;
+}
+
+.preview > div > p {
+  margin-bottom: 0.5rem;
+}
+
 a.no-underline:not(:hover) {
   text-decoration: none;
 }
@@ -53,4 +77,80 @@ a.no-underline:not(:hover) {
 
 .clear {
   clear: both;
+}
+
+.message {
+  font-family: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial,
+    sans-serif, "Apple Symbols";
+  background-color: #313338;
+  font-size: 90%;
+}
+
+.message {
+  position: relative;
+  padding: 1em 1em 1em 4.5em;
+  color: #dbdee1;
+  border-radius: 0.75rem;
+}
+
+.message h3 {
+  font-size: 1em;
+  margin: 0;
+}
+
+.message code {
+  background-color: #2b2d31;
+  color: inherit;
+  border: 1px solid #1e1f22;
+  font-size: 0.875em;
+  font-family: "gg mono", "Source Code Pro", Consolas, "Andale Mono WT",
+    "Andale Mono", "Lucida Console", "Lucida Sans Typewriter",
+    "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono",
+    "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  padding: 0 0.2em;
+  margin: -0.2em 0;
+  border-radius: 4px;
+}
+
+.message a {
+  color: #00a8fc;
+  text-decoration: none;
+}
+
+.message a:hover {
+  text-decoration: underline;
+}
+
+.avatar {
+  position: absolute;
+  left: 1em;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+}
+
+.username {
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.375em;
+  color: rgb(248, 233, 182);
+  margin-right: 0.5em;
+}
+
+.timestamp {
+  font-size: 0.75em;
+  font-weight: 500;
+  line-height: 1.375em;
+  color: #949ba4;
+  display: inline-block;
+}
+
+.role-mention {
+  color: rgb(236, 89, 108);
+  background-color: rgba(236, 89, 108, 0.1);
+  border-radius: 3px;
+}
+
+.embed {
+  border-radius: 4px;
 }
